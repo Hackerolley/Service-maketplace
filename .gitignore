@@ -1,0 +1,99 @@
+
+# =====================
+# DEPENDENCIES
+# =====================
+node_modules/
+
+
+# =====================
+# ENVIRONMENT FILES
+# =====================
+.env
+.env.*
+.env.local
+.env.development
+.env.production
+
+
+# =====================
+# LOG FILES
+# =====================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# =====================
+# RUNTIME DATA
+# =====================
+pids
+*.pid
+*.seed
+*.pid.lock
+
+
+# =====================
+# COVERAGE / TEST
+# =====================
+coverage/
+.nyc_output/
+
+
+# =====================
+# BUILD OUTPUT
+# =====================
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+
+# =====================
+# CACHE FILES
+# =====================
+.cache/
+.parcel-cache/
+.eslintcache
+.rpt2_cache/
+.rts2_cache_*
+
+
+# =====================
+# OS FILES
+# =====================
+.DS_Store
+Thumbs.db
+
+
+# =====================
+# IDE / EDITOR
+# =====================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+
+# =====================
+# DEPLOYMENT
+# =====================
+.vercel/
+.netlify/
+.serverless/
+
+
+# =====================
+# TYPE SCRIPT
+# =====================
+*.tsbuildinfo
+
+
+# =====================
+# OPTIONAL
+# =====================
+*.tgz
+.yarn-integrity

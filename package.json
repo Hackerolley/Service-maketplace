@@ -1,0 +1,36 @@
+{
+  "name": "service-market-place",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "market place for servies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hackerolley/service-market-place.git"
+  },
+  "author": "Yakub Yusuf Olaide",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hackerolley/service-market-place/issues"
+  },
+  "homepage": "https://github.com/Hackerolley/service-market-place#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.10.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.0",
+    "multer": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+
+}
