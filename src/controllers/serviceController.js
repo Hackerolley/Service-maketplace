@@ -8,8 +8,12 @@ export const createService = async (req, res) => {
     const service = await Service.create({
       provider: req.user._id, // from auth middleware
       ...req.body,
+      
     });
-
+    //validate all fields are provided in req.body (title, description, price, category)
+      if (!req.body.title || !req.body.description || !req.body.price || !req.body.category) {
+        return res.status(400).json({ message: "All fields are required" });
+      }
     res.status(201).json({
       message: "Service created successfully",
       service,
@@ -76,7 +80,7 @@ export const updateService = async (req, res) => {
 
     // only provider can update their service
     if (service.provider.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ message: "Not authorized" });
+      return res.status(403).json({ message: "Only the provider can update this service" });
     }
 
     const updatedService = await Service.findByIdAndUpdate(
@@ -109,7 +113,7 @@ export const deleteService = async (req, res) => {
     }
 
     if (service.provider.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ message: "Not authorized" });
+      return res.status(403).json({ message: "Only the provider can delete this service" });
     }
 
     await service.deleteOne();

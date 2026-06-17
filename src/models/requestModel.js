@@ -26,9 +26,25 @@ const requestSchema = new mongoose.Schema(
       trim: true,
     },
 
+    requirements: [
+    {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Skill",
+    }
+    ],
+
+    budget: {
+      type: Number,
+      required: true,
+    },
+    deadline: {
+      type: Date,
+      required: true,
+    },
+
     status: {
       type: String,
-      enum: ["pending", "accepted", "rejected", "completed"],
+      enum: ["pending", "accepted", "in progress", "completed" ,"delivered", "rejected"],
       default: "pending",
     },
 

@@ -33,6 +33,7 @@ const userSchema = new mongoose.Schema({
   },
 
 
+
 });
 
 //password hashing before saving user

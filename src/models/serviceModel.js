@@ -18,19 +18,11 @@ const serviceSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
+    // get category from category model
     category: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
       required: true,
-      enum: [
-        "plumbing",
-        "cleaning",
-        "tutoring",
-        "design",
-        "development",
-        "repair",
-        "other",
-      ],
     },
 
     price: {
