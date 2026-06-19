@@ -102,3 +102,4 @@ export const deleteSkill = async (req, res) => {
     });
   }
 };
+

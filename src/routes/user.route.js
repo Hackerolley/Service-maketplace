@@ -7,7 +7,7 @@ const userRouter = Router();
 userRouter.post('/register', registerUser);
 
 // Login user
-userRouter.post('/login', authMiddleware, loginUser);
+userRouter.post('/login', loginUser);
 
 // Logout user
 userRouter.post('/logout', authMiddleware, logoutUser);

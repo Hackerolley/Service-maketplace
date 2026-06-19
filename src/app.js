@@ -2,6 +2,8 @@ import express from "express";
 import userRoutes from './routes/user.route.js';
 import serviceRoutes from './routes/services.route.js';
 import requestRoutes from './routes/request.route.js';
+import skillRoute from './routes/skillRoute.js';
+import categoryRoute from './routes/categoryRoute.js';
 const app = express();
 app.use(express.json());
 
@@ -29,6 +31,22 @@ app.use('/api/requests', requestRoutes);
 //http request http://localhost:5000/api/requests/getmyrequests
 //http request http://localhost:5000/api/requests/getproviderrequests
 //http request http://localhost:5000/api/requests/updaterequeststatus/:id
+
+//add skill
+app.use('/api/skills', skillRoute);
+
+//http request http://localhost:5000/api/skills/createSkill
+//http request http://localhost:5000/api/skills/approvedSkills
+//http request http://localhost:5000/api/skills/approveSkill/:id
+//http request http://localhost:5000/api/skills/deleteSkill/:id
+
+app.use('/api/categories', categoryRoute);
+
+//http request http://localhost:5000/api/categories/getAllCategories
+//http request http://localhost:5000/api/categories/getCategoryById/:id
+//http request http://localhost:5000/api/categories/createCategory
+//http request http://localhost:5000/api/categories/updateCategory/:id
+//http request http://localhost:5000/api/categories/deleteCategory/:id
 
 
 

@@ -15,28 +15,28 @@ const router = express.Router();
 /**
  * Public Routes
  */
-router.get("/", getAllCategories);
-router.get("/:id", getCategoryById);
+router.get("/getAllCategories", getAllCategories);
+router.get("/getCategoryById/:id", getCategoryById);
 
 /**
  * Admin Routes
  */
 router.post(
-  "/",
+  "/createCategory",
   authMiddleware,
   authorizeRoles("admin"),
   createCategory
 );
 
 router.put(
-  "/:id",
+  "/updateCategory/:id",
   authMiddleware,
   authorizeRoles("admin"),
   updateCategory
 );
 
 router.delete(
-  "/:id",
+  "/deleteCategory/:id",
   authMiddleware,
   authorizeRoles("admin"),
   deleteCategory

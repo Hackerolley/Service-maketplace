@@ -36,10 +36,28 @@ const providerProfileSchema = new mongoose.Schema(
 
     portfolio: [
       {
-        title: String,
-        description: String,
-        image: [String],
-        link: String,
+        title: {
+          type : String,
+          trim : true, 
+          required : true
+        },
+
+        description: {
+          type : String,
+          maxlength : 10000,
+          required : true
+        },
+          
+
+        images: [{
+          type : String
+        }],
+
+        link: {
+          type : String,
+          trim : true
+        },
+
       },
     ],
 
@@ -47,6 +65,12 @@ const providerProfileSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+
+    verifieldDate : Date,
+    verifiedBy : {
+      type : mongoose.Schema.Type.ObjectId,
+      ref : User
+    }
   },
   {
     timestamps: true,

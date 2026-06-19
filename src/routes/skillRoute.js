@@ -24,7 +24,7 @@ router.get("/approvedSkills", getAllSkills);
  * APPROVE SKILL (ADMIN ONLY)
  */
 router.put(
-  "/approve/:id",
+  "/approveSkill/:id",
   authMiddleware,
   authorizeRoles("admin"),
   approveSkill
@@ -34,7 +34,7 @@ router.put(
  * DELETE SKILL (ADMIN ONLY)
  */
 router.delete(
-  "/delete/:id",
+  "/deleteSkill/:id",
   authMiddleware,
   authorizeRoles("admin"),
   deleteSkill
