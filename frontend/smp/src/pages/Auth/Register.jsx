@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api/axios";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [name, setName] = useState("");
@@ -34,42 +35,106 @@ const Register = () => {
     };
 
     return (
-        <div style={{ maxWidth: "400px", margin: "auto" }}>
-            <h2>Register</h2>
+  <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+    <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Full Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+      {/* Heading */}
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-gray-800">
+          Create Account
+        </h2>
 
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+        <p className="text-gray-500 mt-2">
+          Join our Service Marketplace today
+        </p>
+      </div>
 
-                <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                />
+      <form onSubmit={handleSubmit} className="space-y-5">
 
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
+        {/* Full Name */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Full Name
+          </label>
 
-                <button type="submit">Create Account</button>
-            </form>
+          <input
+            type="text"
+            placeholder="Enter your full name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
         </div>
-    );
+
+        {/* Email */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Phone */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Phone Number
+          </label>
+
+          <input
+            type="tel"
+            placeholder="Enter your phone number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Password */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Password
+          </label>
+
+          <input
+            type="password"
+            placeholder="Create a password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Register Button */}
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+        >
+          Create Account
+        </button>
+
+      </form>
+
+      {/* Login Link */}
+      <p className="text-center text-gray-600 mt-6">
+        Already have an account?{" "}
+        <Link
+          to="/login"
+          className="text-blue-600 font-semibold hover:underline"
+        >
+          Login
+        </Link>
+      </p>
+
+    </div>
+  </div>
+);
 };
 
 export default Register;
