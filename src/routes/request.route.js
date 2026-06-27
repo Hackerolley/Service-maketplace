@@ -12,21 +12,21 @@ const router = express.Router();
 /**
  * CUSTOMER SEND REQUEST
  */
-router.post("/", authMiddleware, createRequest);
+router.post("/createrequest", authMiddleware, createRequest);
 
 /**
- * CUSTOMER REQUESTS
+ * GET CUSTOMER REQUESTS
  */
-router.get("/my", authMiddleware, getMyRequests);
+router.get("/getmyrequests", authMiddleware, getMyRequests);
 
 /**
  * PROVIDER REQUESTS
  */
-router.get("/provider", authMiddleware, getProviderRequests);
+router.get("/getproviderrequests", authMiddleware, getProviderRequests);
 
 /**
  * PROVIDER UPDATE STATUS
  */
-router.put("/:id", authMiddleware, updateRequestStatus);
+router.put("/updaterequeststatus/:id", authMiddleware, updateRequestStatus);
 
 export default router;

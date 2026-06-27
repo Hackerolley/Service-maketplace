@@ -1,3 +1,4 @@
+
 export const authorizeRoles = (...allowedRoles) => {
   return (req, res, next) => {
     //CHECK IF USER exit and has a role
@@ -10,3 +11,4 @@ export const authorizeRoles = (...allowedRoles) => {
     next();
   };
 };
+

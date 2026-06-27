@@ -4,11 +4,17 @@ import serviceRoutes from './routes/services.route.js';
 import requestRoutes from './routes/request.route.js';
 import skillRoute from './routes/skillRoute.js';
 import categoryRoute from './routes/categoryRoute.js';
+import reviewRoutes from './routes/review.route.js';
+import cors from "cors";
 const app = express();
 app.use(express.json());
 
-//api declaration
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
 
+//api declaration
 
 app.use('/api/users', userRoutes);
 
@@ -48,6 +54,10 @@ app.use('/api/categories', categoryRoute);
 //http request http://localhost:5000/api/categories/updateCategory/:id
 //http request http://localhost:5000/api/categories/deleteCategory/:id
 
+app.use('/api/reviews', reviewRoutes);
+//http request http://localhost:5000/api/reviews/createReview
+//http request http://localhost:5000/api/reviews/getAServiceReviews/:Id
+//http request http://localhost:5000/api/reviews/deleteAReview/:id
 
 
 export default app;

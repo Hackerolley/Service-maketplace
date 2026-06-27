@@ -1,6 +1,6 @@
 import express from "express";
 import authMiddleware from "../middleware/authMiddleware.js";
-import { authorizeRoles } from "../middleware/roleMiddleware.js";
+import {authorizeRoles} from "../middleware/roleMiddleware.js";
 import {
   createService,
   getAllServices,
