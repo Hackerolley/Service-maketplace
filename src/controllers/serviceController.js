@@ -32,7 +32,9 @@ export const createService = async (req, res) => {
 export const getAllServices = async (req, res) => {
   try {
     const services = await Service.find()
-      .populate("provider", "name email phone");
+      .populate("provider", "name email phone")
+      .populate("category", "name");
+      
 
     res.status(200).json({
       count: services.length,

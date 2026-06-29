@@ -34,101 +34,111 @@ const Register = () => {
         }
     };
 
-    return (
-  <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-    <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+return (
+  <div className="min-h-screen bg-white flex items-center justify-center px-6">
+
+    <div className="w-full max-w-md">
 
       {/* Heading */}
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800">
-          Create Account
+      <div className="mb-8 text-center">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          Create account
         </h2>
 
-        <p className="text-gray-500 mt-2">
+        <p className="text-sm text-gray-500 mt-1">
           Join our Service Marketplace today
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-6">
 
         {/* Full Name */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Full Name
+          <label className="text-xs text-gray-600">
+            Full name
           </label>
 
           <input
             type="text"
-            placeholder="Enter your full name"
+            placeholder="Enter your full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-2 text-sm px-3 py-2 
+              bg-white border-b border-gray-300 
+              focus:border-black outline-none transition"
           />
         </div>
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Email Address
+          <label className="text-xs text-gray-600">
+            Email address
           </label>
 
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="you@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-2 text-sm px-3 py-2 
+              bg-white border-b border-gray-300 
+              focus:border-black outline-none transition"
           />
         </div>
 
         {/* Phone */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Phone Number
+          <label className="text-xs text-gray-600">
+            Phone number
           </label>
 
           <input
             type="tel"
-            placeholder="Enter your phone number"
+            placeholder="+234..."
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-2 text-sm px-3 py-2 
+              bg-white border-b border-gray-300 
+              focus:border-black outline-none transition"
           />
         </div>
 
         {/* Password */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="text-xs text-gray-600">
             Password
           </label>
 
           <input
             type="password"
-            placeholder="Create a password"
+            placeholder="Create password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-2 text-sm px-3 py-2 
+              bg-white border-b border-gray-300 
+              focus:border-black outline-none transition"
           />
         </div>
 
-        {/* Register Button */}
+        {/* Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+          className="w-full mt-2 py-2 text-sm font-medium 
+            bg-black text-white hover:bg-gray-900 
+            transition"
         >
-          Create Account
+          Create account
         </button>
-
       </form>
 
-      {/* Login Link */}
-      <p className="text-center text-gray-600 mt-6">
+      {/* Login link */}
+      <p className="text-xs text-gray-500 mt-6 text-center">
         Already have an account?{" "}
         <Link
           to="/login"
-          className="text-blue-600 font-semibold hover:underline"
+          className="text-black font-medium hover:underline"
         >
-          Login
+          Sign in
         </Link>
       </p>
 

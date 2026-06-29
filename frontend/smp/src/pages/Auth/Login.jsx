@@ -41,51 +41,55 @@ export default function Login() {
   }
 
   };
+return (
+  <div className="min-h-screen bg-white flex items-center justify-center px-6">
 
-  return (
-  <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-    <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
-      
+    <div className="w-full max-w-md">
+
       {/* Heading */}
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800">
-          Welcome Back
-        </h1>
+      <div className="mb-8 text-center">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          Welcome back
+        </h2>
 
-        <p className="text-gray-500 mt-2">
+        <p className="text-sm text-gray-500 mt-1">
           Login to your Service Marketplace account
         </p>
       </div>
 
-      <form onSubmit={handleLogin} className="space-y-5">
+      <form onSubmit={handleLogin} className="space-y-6">
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Email Address
+          <label className="text-xs text-gray-600">
+            Email address
           </label>
 
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="you@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-2 text-sm px-3 py-2 
+              bg-white border-b border-gray-300 
+              focus:border-black outline-none transition"
           />
         </div>
 
         {/* Password */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="text-xs text-gray-600">
             Password
           </label>
 
           <input
             type="password"
-            placeholder="Enter your password"
+            placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full mt-2 text-sm px-3 py-2 
+              bg-white border-b border-gray-300 
+              focus:border-black outline-none transition"
           />
         </div>
 
@@ -93,30 +97,31 @@ export default function Login() {
         <div className="flex justify-end">
           <Link
             to="/forgot-password"
-            className="text-sm text-blue-600 hover:text-blue-700"
+            className="text-xs text-gray-500 hover:text-black transition"
           >
-            Forgot Password?
+            Forgot password?
           </Link>
         </div>
 
-        {/* Login Button */}
+        {/* Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+          className="w-full mt-2 py-2 text-sm font-medium 
+            bg-black text-white hover:bg-gray-900 
+            transition"
         >
           Login
         </button>
-
       </form>
 
-      {/* Register Link */}
-      <p className="text-center text-gray-600 mt-6">
+      {/* Register link */}
+      <p className="text-xs text-gray-500 mt-6 text-center">
         Don't have an account?{" "}
         <Link
           to="/register"
-          className="text-blue-600 font-semibold hover:underline"
+          className="text-black font-medium hover:underline"
         >
-          Register
+          Create account
         </Link>
       </p>
 
